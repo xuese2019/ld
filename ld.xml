@@ -1,0 +1,55 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<Script file="ld.lua"/> 
+	<Frame name="LdAddon" parent="UIParent" toplevel="true" enableMouse="true"> 
+
+		<Size>
+			<!-- <AbsDimension x="100" y="50" /> -->
+			<RelDimension x ="1" y ="0.02" />
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT-TOP" />
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background"
+			edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="0" right="0" top="0" bottom="1"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="1"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="1"/>
+			</EdgeSize>
+		</Backdrop>
+
+		<Frames>
+
+			<Button name ="userButton" text="人物信息">
+				<Size>
+					<AbsDimension x="90" y="30" /> 
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT-TOP"/>
+				</Anchors>
+				<NormalFont style="GameFontNormalHuge"/>
+				<Scripts>
+					<OnLoad>
+						self:RegisterForClicks("LeftButtonUp");
+					</OnLoad>
+					<OnMouseUp>
+				       print("OnMouseDown: "..arg1);
+				     </OnMouseUp>
+				</Scripts>
+			</Button>
+
+		</Frames>
+
+		<Scripts>
+			<OnLoad>
+				LdAddon_OnLoad();
+			</OnLoad>
+		</Scripts>
+	</Frame>
+</Ui>

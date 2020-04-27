@@ -1,0 +1,6 @@
+## Interface: 1134
+## Title : 简易插件
+## Notes: 猎人简易插件
+## Author: LD
+ld.lua
+ld.xml
